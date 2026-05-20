@@ -21,7 +21,7 @@ from datetime import datetime, timezone
 
 import numpy as np
 import pandas as pd
-from numpy.core.multiarray import array
+from numpy import array
 from pytest_mock import MockerFixture
 
 from superset.db_engine_specs.base import BaseEngineSpec
@@ -244,3 +244,16 @@ def test_empty_column_names_do_not_rename_explicit_synthetic_names() -> None:
     df = result_set.to_pandas_df()
     assert list(df.columns) == ["_col_1", "_col_0"]
     assert df.iloc[0].tolist() == [10, 20]
+
+
+def test_structured_array_dtype_compat() -> None:
+    """
+    Regression: np.array() with a list-of-tuples dtype must produce a valid
+    structured array under NumPy 2.x. Covers SupersetResultSet.__init__ line 174.
+    """
+    data = [("alice", 1), ("bob", 2)]
+    numpy_dtype = [("name", "object"), ("score", "object")]
+    arr = np.array(data, dtype=numpy_dtype)
+    assert arr.dtype.names == ("name", "score")
+    assert arr["name"].tolist() == ["alice", "bob"]
+    assert arr["score"].tolist() == [1, 2]

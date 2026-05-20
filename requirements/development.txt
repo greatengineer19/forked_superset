@@ -62,8 +62,6 @@ backoff==2.2.1
     # via
     #   -c requirements/base-constraint.txt
     #   apache-superset
-backports-tarfile==1.2.0
-    # via jaraco-context
 bcrypt==4.3.0
     # via
     #   -c requirements/base-constraint.txt
@@ -431,9 +429,7 @@ idna==3.10
     #   trio
     #   url-normalize
 importlib-metadata==8.7.0
-    # via
-    #   keyring
-    #   opentelemetry-api
+    # via opentelemetry-api
 importlib-resources==6.5.2
     # via prophet
 iniconfig==2.0.0
@@ -571,7 +567,7 @@ nh3==0.2.21
     #   apache-superset
 nodeenv==1.8.0
     # via pre-commit
-numpy==1.26.4
+numpy==2.4.6
     # via
     #   -c requirements/base-constraint.txt
     #   apache-superset
@@ -630,7 +626,7 @@ packaging==25.0
     #   pytest
     #   shillelagh
     #   sqlalchemy-bigquery
-pandas==2.1.4
+pandas==2.3.3
     # via
     #   -c requirements/base-constraint.txt
     #   apache-superset
@@ -813,6 +809,10 @@ pytest-mock==3.10.0
     # via
     #   apache-superset
     #   apache-superset-extensions-cli
+python-calamine==0.6.2
+    # via
+    #   -c requirements/base-constraint.txt
+    #   pandas
 python-dateutil==2.9.0.post0
     # via
     #   -c requirements/base-constraint.txt
