@@ -35,6 +35,12 @@ pyarrow>=20.0.0,<21.0.0
 pyopenssl>=26.0.0,<27.0.0
 # Security: CVE-2026-25645 (MEDIUM) - Insecure Temporary File
 requests>=2.33.0,<3.0.0
+# Security: CVE-2026-27205 - cache poisoning via missing Vary: Cookie header
+flask>=3.1.3,<4.0.0
+# Flask 3.x compatibility: locked_cached_property removed in Flask 3.0
+flask-babel>=4.0.0,<5.0.0
+# Flask 3.x compatibility: _app_ctx_stack removed in Flask 3.0
+flask-sqlalchemy>=3.0.0,<4.0.0
 
 # 5.0.0 has a sensitive deprecation used in other libs
 # -> https://github.com/aio-libs/async-timeout/blob/master/CHANGES.rst#500-2024-10-31
