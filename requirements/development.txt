@@ -567,7 +567,19 @@ nh3==0.2.21
     #   apache-superset
 nodeenv==1.8.0
     # via pre-commit
-numpy==2.4.6
+numpy==2.4.6 ; python_version >= "3.11"
+    # via
+    #   -c requirements/base-constraint.txt
+    #   apache-superset
+    #   bottleneck
+    #   cmdstanpy
+    #   contourpy
+    #   db-dtypes
+    #   matplotlib
+    #   pandas
+    #   pandas-gbq
+    #   prophet
+numpy==1.26.4 ; python_version < "3.11"
     # via
     #   -c requirements/base-constraint.txt
     #   apache-superset

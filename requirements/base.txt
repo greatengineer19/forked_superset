@@ -245,7 +245,13 @@ nh3==0.2.21
     # via apache-superset (pyproject.toml)
 numexpr==2.10.2
     # via -r requirements/base.in
-numpy==2.4.6
+numpy==2.4.6 ; python_version >= "3.11"
+    # via
+    #   apache-superset (pyproject.toml)
+    #   bottleneck
+    #   numexpr
+    #   pandas
+numpy==1.26.4 ; python_version < "3.11"
     # via
     #   apache-superset (pyproject.toml)
     #   bottleneck
