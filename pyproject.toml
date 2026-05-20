@@ -72,11 +72,12 @@ dependencies = [
     "marshmallow-union>=0.1",
     "msgpack>=1.0.0, <1.2",
     "nh3>=0.2.11, <0.4",
-    "numpy>1.23.5, <2.3",
+    "numpy>=2.4.0, <2.5;python_version>='3.11'",
+    "numpy>=1.23.5, <2.0;python_version<'3.11'",
     "packaging",
     # --------------------------
     # pandas and related (wanting pandas[performance] without numba as it's 100+MB and not needed)
-    "pandas[excel]>=2.1.4, <2.4",
+    "pandas[excel]>=2.2, <2.3",
     "bottleneck", # recommended performance dependency for pandas, see https://pandas.pydata.org/docs/getting_started/install.html#performance-dependencies-recommended
     # --------------------------
     "parsedatetime",
@@ -470,6 +471,7 @@ authorized_licenses = [
 # These are ok, checked manually
 # Seems ok, might need legal review
 # https://github.com/urschrei/pypolyline/blob/master/LICENSE.md
+numpy = ">=2"  # BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0 (compound SPDX)
 polyline = "2"
 # --------------------------------------------------------------
 
